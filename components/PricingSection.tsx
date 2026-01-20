@@ -30,15 +30,15 @@ export const PricingSection = () => {
   const { handleCheckout } = useCheckout();
 
   return (
-    <section id="precos" className="py-20 px-4 bg-secondary/30">
+    <section id="precos" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-bold mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4"
           >
             Escolha Seu Plano
           </motion.h2>
@@ -47,13 +47,13 @@ export const PricingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-muted-foreground"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground"
           >
             Comece sua jornada de transformação hoje
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {/* Monthly Plan */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -61,25 +61,25 @@ export const PricingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
-            className="relative card-ember rounded-2xl p-8 border-2 border-primary glow-blue"
+            className="relative card-ember rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-primary glow-blue"
           >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              <span className="inline-flex items-center gap-1 gradient-blue text-white rounded-full px-4 py-1 text-sm font-semibold">
-                <Star className="w-4 h-4 fill-white" />
+            <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
+              <span className="inline-flex items-center gap-1 gradient-blue text-white rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm font-semibold">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-white" />
                 RECOMENDADO
               </span>
             </div>
             
-            <h3 className="text-2xl font-bold mb-2 mt-4">Plano Mensal</h3>
-            <div className="mb-4">
-              <span className="text-4xl font-black gradient-text-blue">R$ 37</span>
-              <span className="text-muted-foreground">/mês</span>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 mt-6 sm:mt-4">Plano Mensal</h3>
+            <div className="mb-3 sm:mb-4">
+              <span className="text-3xl sm:text-4xl font-black gradient-text-blue">R$ 37</span>
+              <span className="text-muted-foreground text-sm sm:text-base">/mês</span>
             </div>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-6">
               Transformação completa com acompanhamento
             </p>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {monthlyFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -90,13 +90,13 @@ export const PricingSection = () => {
 
             <Button
               onClick={() => handleCheckout({ plan: 'monthly', price: 37 })}
-              className="w-full gradient-ember text-white font-bold text-lg py-6 rounded-xl glow-ember hover:scale-105 transition-transform"
+              className="w-full gradient-ember text-white font-bold text-base sm:text-lg py-5 sm:py-6 rounded-xl glow-ember hover:scale-105 transition-transform"
             >
-              <Flame className="w-5 h-5 mr-2" />
+              <Flame className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               COMEÇAR AGORA
             </Button>
             
-            <p className="text-center text-muted-foreground text-sm mt-4">
+            <p className="text-center text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
               Garantia de 7 dias • Cancele quando quiser
             </p>
           </motion.div>
@@ -108,17 +108,17 @@ export const PricingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
-            className="card-ember rounded-2xl p-8"
+            className="card-ember rounded-xl sm:rounded-2xl p-6 sm:p-8"
           >
-            <h3 className="text-2xl font-bold mb-2">Plano Vitalício</h3>
-            <div className="mb-4">
-              <span className="text-4xl font-black">R$ 197</span>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">Plano Vitalício</h3>
+            <div className="mb-3 sm:mb-4">
+              <span className="text-3xl sm:text-4xl font-black">R$ 197</span>
             </div>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-6">
               Pagamento único • Apenas conteúdo gravado
             </p>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {lifetimeFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
                   {feature.included ? (
@@ -136,12 +136,12 @@ export const PricingSection = () => {
             <Button
               onClick={() => handleCheckout({ plan: 'lifetime', price: 197 })}
               variant="outline"
-              className="w-full font-bold text-lg py-6 rounded-xl"
+              className="w-full font-bold text-base sm:text-lg py-5 sm:py-6 rounded-xl"
             >
               COMPRAR VITALÍCIO
             </Button>
             
-            <p className="text-center text-muted-foreground text-sm mt-4">
+            <p className="text-center text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
               Ideal para quem prefere autoestudo
             </p>
           </motion.div>
@@ -153,14 +153,14 @@ export const PricingSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 max-w-4xl mx-auto card-ember rounded-2xl p-8 overflow-x-auto"
+          className="mt-8 sm:mt-12 md:mt-16 max-w-4xl mx-auto card-ember rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 overflow-x-auto"
         >
-          <table className="w-full">
+          <table className="w-full text-sm sm:text-base">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-4 font-bold">Recurso</th>
-                <th className="text-center py-4 font-bold gradient-text-blue">Mensal</th>
-                <th className="text-center py-4 font-bold">Vitalício</th>
+                <th className="text-left py-3 sm:py-4 font-bold text-xs sm:text-sm md:text-base">Recurso</th>
+                <th className="text-center py-3 sm:py-4 font-bold gradient-text-blue text-xs sm:text-sm md:text-base">Mensal</th>
+                <th className="text-center py-3 sm:py-4 font-bold text-xs sm:text-sm md:text-base">Vitalício</th>
               </tr>
             </thead>
             <tbody>

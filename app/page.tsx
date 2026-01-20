@@ -24,9 +24,9 @@ export default function Home() {
       <FAQSection />
       
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-border bg-secondary/20">
+      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-border bg-secondary/20">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
             {/* Brand */}
             <div>
               <h3 className="text-xl font-bold mb-4 gradient-text-ember">

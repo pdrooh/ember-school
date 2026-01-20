@@ -45,7 +45,7 @@ export const CountdownTimer = memo(() => {
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
   return (
-    <div className="inline-flex items-center gap-0.5 font-mono text-lg font-bold gradient-text-ember">
+    <div className="inline-flex items-center gap-0.5 font-mono text-sm sm:text-base md:text-lg font-bold gradient-text-ember">
       <TimeDisplay value={formatTime(time.hours)} />
       <span>:</span>
       <TimeDisplay value={formatTime(time.minutes)} />
