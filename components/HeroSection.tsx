@@ -201,13 +201,13 @@ export const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="w-full sm:w-auto gradient-ember text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl glow-ember"
+              className="w-full sm:w-auto gradient-ember text-white font-bold text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-xl glow-ember"
               onClick={() => handleCTAClick('monthly')}
             >
-              <Flame className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              <span className="whitespace-nowrap">Quero Ser Uma Brasa</span>
-              <span className="hidden sm:inline"> — R$ 37/mês</span>
-              <span className="sm:hidden block text-xs mt-1">R$ 37/mês</span>
+              <Flame className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+              <span className="whitespace-nowrap text-xs sm:text-sm md:text-base">Quero Ser Uma Brasa</span>
+              <span className="hidden md:inline"> — R$ 37/mês</span>
+              <span className="md:hidden block text-xs mt-1">R$ 37/mês</span>
             </Button>
           </motion.div>
           <motion.div
@@ -218,10 +218,12 @@ export const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto border-border text-foreground font-semibold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl hover:bg-secondary"
+              className="w-full sm:w-auto border-border text-foreground font-semibold text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-xl hover:bg-secondary"
               onClick={() => handleCTAClick('lifetime')}
             >
-              Ver Plano Vitalício — R$ 197
+              <span className="text-xs sm:text-sm md:text-base">Ver Plano Vitalício</span>
+              <span className="hidden md:inline"> — R$ 197</span>
+              <span className="md:hidden block text-xs mt-1">R$ 197</span>
             </Button>
           </motion.div>
         </motion.div>
