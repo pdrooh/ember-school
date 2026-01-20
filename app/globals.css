@@ -1,26 +1,244 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Ember School Design System - Enhanced Dark Theme with Fire/Ember Accents */
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Base Colors - Darker, richer background */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    
+    /* Card Colors - More depth */
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
+    
+    /* Popover */
+    --popover: 222 47% 7%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Primary - Enhanced Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Secondary - Richer dark */
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Muted - Better contrast */
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 70%;
+    
+    /* Accent - Vibrant Orange/Red Fire */
+    --accent: 20 96% 58%;
+    --accent-foreground: 210 40% 98%;
+    
+    /* Destructive - Softer red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Borders - More visible */
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 20 96% 58%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Ember Colors - Enhanced */
+    --ember-orange: 20 96% 58%;
+    --ember-gold: 45 93% 58%;
+    --ember-red: 12 92% 52%;
+    --ember-blue: 217 91% 60%;
+    --ember-purple: 262 83% 58%;
+    --ember-dark: 222 47% 3%;
+    --ember-card: 222 47% 9%;
+    --ember-success: 142 76% 36%;
+    --ember-danger: 0 84% 60%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Enhanced Gradients - More vibrant and smooth */
+  .gradient-ember {
+    background: linear-gradient(135deg, 
+      hsl(20 96% 58%) 0%, 
+      hsl(30 95% 55%) 25%,
+      hsl(45 93% 58%) 50%, 
+      hsl(20 96% 58%) 75%,
+      hsl(12 92% 52%) 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  .gradient-blue {
+    background: linear-gradient(135deg, 
+      hsl(217 91% 60%) 0%, 
+      hsl(262 83% 58%) 50%, 
+      hsl(217 91% 60%) 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+  
+  .gradient-text-ember {
+    background: linear-gradient(135deg, 
+      hsl(20 96% 58%) 0%, 
+      hsl(45 93% 58%) 50%,
+      hsl(12 92% 52%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: gradient-text 5s linear infinite;
+  }
+  
+  .gradient-text-blue {
+    background: linear-gradient(135deg, 
+      hsl(217 91% 60%) 0%, 
+      hsl(262 83% 58%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: gradient-text 4s linear infinite;
+  }
+  
+  /* Enhanced Glow Effects */
+  .glow-ember {
+    box-shadow: 
+      0 0 20px hsl(20 96% 58% / 0.4),
+      0 0 40px hsl(20 96% 58% / 0.3),
+      0 0 60px hsl(45 93% 58% / 0.2),
+      0 0 80px hsl(12 92% 52% / 0.1);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  
+  .glow-blue {
+    box-shadow: 
+      0 0 20px hsl(217 91% 60% / 0.4),
+      0 0 40px hsl(217 91% 60% / 0.3),
+      0 0 60px hsl(262 83% 58% / 0.2);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Enhanced Cards */
+  .card-ember {
+    background: linear-gradient(135deg, 
+      hsl(222 47% 9%) 0%, 
+      hsl(222 47% 7%) 50%,
+      hsl(222 47% 9%) 100%);
+    border: 1px solid hsl(222 30% 20%);
+    box-shadow: 
+      0 4px 6px -1px hsl(0 0% 0% / 0.3),
+      0 2px 4px -2px hsl(0 0% 0% / 0.2);
+  }
+  
+  .card-ember:hover {
+    border-color: hsl(20 96% 58% / 0.3);
+    box-shadow: 
+      0 10px 15px -3px hsl(0 0% 0% / 0.4),
+      0 4px 6px -4px hsl(0 0% 0% / 0.3),
+      0 0 20px hsl(20 96% 58% / 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Enhanced Background Gradients */
+  .bg-ember-radial {
+    background: radial-gradient(
+      ellipse 120% 100% at center top, 
+      hsl(20 96% 58% / 0.2) 0%, 
+      hsl(45 93% 58% / 0.1) 30%,
+      transparent 70%);
+    animation: radial-pulse 8s ease-in-out infinite;
+  }
+  
+  .bg-blue-radial {
+    background: radial-gradient(
+      ellipse at center, 
+      hsl(217 91% 60% / 0.15) 0%, 
+      hsl(262 83% 58% / 0.08) 40%,
+      transparent 70%);
+  }
+  
+  /* Animations */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes gradient-text {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+  }
+  
+  @keyframes radial-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Accordion animations */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
 }

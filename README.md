@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ember School - Brasa Viva do Altar 🔥
 
-## Getting Started
+Site de venda de curso moderno e tecnológico construído com **Next.js 14**, **React 18**, **TypeScript** e **Tailwind CSS**.
 
-First, run the development server:
+## 🚀 Tecnologias
+
+- **Next.js 14** - Framework React com App Router
+- **React 18** - Biblioteca UI
+- **TypeScript** - Type safety completo
+- **Tailwind CSS 3** - Utility-first CSS
+- **Framer Motion** - Animações fluidas
+- **Lucide React** - Ícones modernos
+
+## ✨ Características
+
+- ⚡ **Performance otimizada** - Next.js com otimizações automáticas
+- 🎨 **Design impactante** - Tema escuro com gradientes vibrantes
+- 📱 **Totalmente responsivo** - Mobile-first design
+- 🎭 **Animações suaves** - Framer Motion para micro-interações
+- 🔍 **SEO otimizado** - Meta tags e structured data
+- ⚙️ **Pronto para integração** - Estrutura preparada para checkout
+
+## 🛠️ Instalação Local
 
 ```bash
+# Instalar dependências
+npm install
+
+# Rodar em desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build para produção
+npm run build
+
+# Iniciar produção
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deploy na Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Opção 1: Deploy via GitHub (Recomendado)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Faça push do código para um repositório GitHub
+2. Acesse [vercel.com](https://vercel.com)
+3. Clique em "New Project"
+4. Importe o repositório
+5. A Vercel detectará automaticamente o Next.js
+6. Clique em "Deploy"
 
-## Learn More
+### Opção 2: Deploy via CLI
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Fazer login
+vercel login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Deploy
+vercel
 
-## Deploy on Vercel
+# Deploy para produção
+vercel --prod
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Configurações Automáticas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O projeto já está configurado com:
+- ✅ `vercel.json` - Configurações de build e headers
+- ✅ `next.config.mjs` - Otimizações para produção
+- ✅ Headers de segurança
+- ✅ Cache otimizado
+- ✅ Compressão habilitada
+
+## 📁 Estrutura
+
+```
+ember-school-next/
+├── app/                    # App Router do Next.js
+│   ├── layout.tsx          # Layout principal
+│   ├── page.tsx            # Página inicial
+│   └── globals.css         # Estilos globais
+├── components/             # Componentes React
+│   ├── ui/                 # Componentes UI base
+│   └── ...                 # Seções da landing page
+├── hooks/                  # Hooks customizados
+├── lib/                    # Utilitários
+└── public/                 # Arquivos estáticos
+```
+
+## 🎨 Melhorias de Cores
+
+- **Gradientes animados** - Transições suaves e vibrantes
+- **Melhor contraste** - Acessibilidade aprimorada
+- **Efeitos glow** - Iluminação sutil nos elementos
+- **Animações de cor** - Gradientes em movimento
+
+## 🔧 Variáveis de Ambiente
+
+Crie um arquivo `.env.local` para variáveis de ambiente:
+
+```env
+# Opcional: Google Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Opcional: URL do checkout
+NEXT_PUBLIC_CHECKOUT_URL=https://checkout.emberschool.com
+```
+
+## 📝 Próximos Passos
+
+1. **Integrar checkout** - Edite `/hooks/useCheckout.ts`
+2. **Adicionar analytics** - Configure Google Analytics
+3. **Otimizar imagens** - Use `next/image` para melhor performance
+4. **Configurar domínio** - Adicione seu domínio na Vercel
+
+## 📄 Licença
+
+Todos os direitos reservados - Ember School
+
+---
+
+Desenvolvido com ❤️ para transformar vidas
